@@ -1,1 +1,10 @@
-<p>thequote works!</p>
+<div>
+    <button class="btn btn-primary" (click)=showFrom()>Create a new Quote</button>
+</div>
+<app-quoteform *ngIf='isForm'></app-quoteform>
+
+<div *ngFor='let quoteEntry of quoteEntries'>
+    <h6>{{quoteEntry.date | date}}</h6>
+    <h5>{{quoteEntry.title}}</h5>
+    <p>{{quoteEntry.entry}}</p>
+</div>
