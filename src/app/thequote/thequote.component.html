@@ -24,7 +24,7 @@
                             <button type="button" (click)='showDetails(i)'
                                 class="btn btn-outline-success float-right btn-sm" name="button"> <small>Details</small>
                             </button>
-                            <small class="">Posted {{quote.postenOn|quoteDate}}</small>
+                            <small class="">Posted {{quote.postenOn|dateCount}}</small>
                             <app-quote-detail *ngIf='quote.showQuote' [quote]='quote'
                                 (delQuote)='deletedQuote($event,i)'></app-quote-detail>
                         </div>
