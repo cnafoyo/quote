@@ -9,6 +9,7 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteNavComponent } from './quote-nav/quote-nav.component';
 import { QuoteDatePipe } from './quote-date.pipe';
+import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { QuoteDatePipe } from './quote-date.pipe';
     QuoteFormComponent,
     QuoteNavComponent,
     QuoteDatePipe,
+    QuoteDetailComponent,
 
   ],
   imports: [
