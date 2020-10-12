@@ -1,11 +1,37 @@
-<div class="mb-200">
-    <button class="btn btn-primary" (click)=showForm()>Create a new Quote</button>
-</div>
-<div class="mb-200">
-    <app-quoteform *ngIf='isForm'></app-quoteform>
-</div>
-<div *ngFor='let quoteEntry of quoteEntries' class="mb -200">
-    <h6>{{quoteEntry.date | date}}</h6>
-    <h5>{{quoteEntry.title}}</h5>
-    <p>{{quoteEntry.entry}}</p>
+<div class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="" class="navbar-brand ml-5">Quotes Project By Billy Nafwoyo</a></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <app-quote-form (sendQuote)="addedQuote($event)"></app-quote-form>
+        </div>
+        <div class="col-md-6">
+            <br><br><br>
+            <ul>
+                <li *ngFor='let quote of quotes;let i = index'>
+                    <!-- <span *ngIf=></span> -->
+                    <div class="card rounded-0">
+                        <!-- <span *ngFor></span> -->
+                        <h6 (click)='calcUpest()' class="card-header">{{quote.description}}<br>
+                            <small>-{{quote.author}}</small></h6>
+                        <div class="card-body">
+                            <button type="button" (click)='addUpvote(i)'
+                                class="btn btn-success btn-sm float-right"><small>{{quote.upVote}} Votes</small>
+                            </button>
+                            <button type="button" (click)='addDownVote(i)'
+                                class="btn btn-success btn-sm float-right"><small>{{quote.downVote}} Down Votes</small>
+                            </button>
+                            <button type="button" (click)='showDetails(i)'
+                                class="btn btn-outline-success float-right btn-sm" name="button"> <small>Details</small>
+                            </button>
+                            <small class="">Posted {{quote.postenOn|quoteDate}}</small>
+                            <app-quote-details *ngIf='quote.showQuote' [quote]='quote'
+                                (delQuote)='deletedQuote($event,i)'></app-quote-details>
+                        </div>
+                    </div><br>
+                </li>
+
+            </ul>
+        </div>
+    </div>
 </div>
