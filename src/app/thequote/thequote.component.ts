@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { QuoteB } from '../quote-b'
+import { Quote } from '../quote'
 @Component({
-  selector: 'app-quote',
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css']
+  selector: 'app-thequote',
+  templateUrl: './thequote.component.html',
+  styleUrls: ['./thequote.component.css']
 })
 export class QuoteComponent implements OnInit {
   showForm: boolean = false
   count = 0;
   countDown = 0;
-  quotes: QuoteB[] = [
-    new QuoteB(1, "Billy", "William Shakespear", "To be, or not to be, that is the question", new Date(2020, 9, 10), this.count, this.countDown),
-    new QuoteB(2, "Micky Mouse", "Winston Churchill", "Empires of the future will be empires of the mind.", new Date(2020, 10, 2), this.count, this.countDown),
-    new QuoteB(3, "Naruto", "Village Dev", "It is working from my machine", new Date(2020, 10, 12), this.count, this.countDown)
+  quotes: Quote[] = [
+    new Quote(1, "Billy", "William Shakespear", "To be, or not to be, that is the question", new Date(2020, 9, 10), this.count, this.countDown),
+    new Quote(2, "Micky Mouse", "Winston Churchill", "Empires of the future will be empires of the mind.", new Date(2020, 10, 2), this.count, this.countDown),
+    new Quote(3, "Naruto", "Village Dev", "It is working from my machine", new Date(2020, 10, 12), this.count, this.countDown)
 
 
   ]

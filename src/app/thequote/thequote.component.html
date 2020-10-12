@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="" class="navbar-brand ml-5">Quotes Project By Billy Nafwoyo</a></div>
+    <a href="" class="navbar-brand ml-5">Quotes Project By Billy Chepkemoi</a></div>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <app-quote-form (sendQuote)="addedQuote($event)"></app-quote-form>
+            <app-quoteform (sendQuote)="addedQuote($event)"></app-quoteform>
         </div>
         <div class="col-md-6">
             <br><br><br>
@@ -25,8 +25,8 @@
                                 class="btn btn-outline-success float-right btn-sm" name="button"> <small>Details</small>
                             </button>
                             <small class="">Posted {{quote.postenOn|quoteDate}}</small>
-                            <app-quote-details *ngIf='quote.showQuote' [quote]='quote'
-                                (delQuote)='deletedQuote($event,i)'></app-quote-details>
+                            <app-quote-detail *ngIf='quote.showQuote' [quote]='quote'
+                                (delQuote)='deletedQuote($event,i)'></app-quote-detail>
                         </div>
                     </div><br>
                 </li>
